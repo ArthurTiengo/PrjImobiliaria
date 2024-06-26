@@ -1,20 +1,31 @@
 body, html{
-    background-color: #291614;
     margin: 0;
     padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../imgs/mclaren1.avif);
 }
+
+body{
+    background-image: url(../imgs/mclaren1.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 h1 {
     font-family: "Koulen";
     text-align: center;
     margin: 0;
     padding: 0;
+    color:#F2620F ;
 }
+
 h1.titulo{
     text-align: center;
     margin: 0;
     padding: 40px;
-    background-color: #D9559D;
-    color: #DA8DB4;
+    background-color: #F24B0F;
+    color: #f18647;
     font-size: 4rem;
 }
 nav ul {
@@ -32,7 +43,7 @@ nav ul li {
 nav ul li span{
     font-size: 1.6rem;
     font-style: italic;
-    color: #316D1E;
+    color: #BF391B;
 }
 form {
     max-width: 400px;
@@ -42,11 +53,16 @@ form {
 form label {
     display: block;
     margin-bottom: 5px;
+    color: #731A06;
 }
 form input, form select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
+    border-radius: 7px;
+    border: 2px solid #F24B0F;
+    box-shadow: 1px 2px 3px;
+    color:#731A06 ;
 }
 form button {
     width: 100%;
@@ -60,7 +76,7 @@ form button:hover {
     background-color: #0056b3;
 }
 .table-bordered th, .table-bordered td {
-    border: 1px solid #dee2e6;
+    border: 1px solid #BF391B;
     text-align: center;
 }
 .table thead th {
@@ -68,3 +84,13 @@ form button:hover {
     color: #fff;
     text-align: center;
 }
+
+.active{
+    color: #731A06;
+}
+
+.stop{
+    color: #BF391B;
+}
+
+

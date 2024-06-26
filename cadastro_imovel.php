@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "db_imobiliaria";
+    $dbname = "imobiliaria";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     if (!$conn) {
             die("Conexão falhou: " . mysqli_connect_error());
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $destino)) {
             // Inserir os dados no banco de dados
-            $sql = "INSERT INTO imovel (uf, cidade, bairro, tipoLogradouro, logradouro, numero, complemento, tipoImovel, aluguelVenda,descricao, preco, imagem) VALUES ('$uf', '$cidade', '$bairro', '$tipoLogradouro', '$logradouro', '$numero', '$complemento', '$tipoImovel','$aluguelVenda','$descricao','$preco','$destino')";
+            $sql = "INSERT INTO imoveis (uf, cidade, bairro, tipoLogradouro, logradouro, numero, complemento, tipoImovel, aluguelVenda,descricao, preco, imagem) VALUES ('$uf', '$cidade', '$bairro', '$tipoLogradouro', '$logradouro', '$numero', '$complemento', '$tipoImovel','$aluguelVenda','$descricao','$preco','$destino')";
 
             if (mysqli_query($conn, $sql)) {
                 echo "Imóvel cadastrado com sucesso!";
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'cabecalho.php';
     ?>
 
-    <h1>Cadastro de Imovel</h1>
+    <h1 class="stop">Cadastro de Imovel</h1>
 
     <form method="POST" enctype="multipart/form-data">
         <label for="uf">UF</label>
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="number" id="preco" name="preco" required>
         <label for="imagem">Imagem</label>
         <input type="file" id="imagem" name="imagem" required>
-        <button type="submit" class="btn btn-success">Cadastrar</button>
+        <button type="submit" class="btn btn-dark">Cadastrar</button>
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
